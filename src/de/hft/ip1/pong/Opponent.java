@@ -21,7 +21,7 @@ public class Opponent {
 				}else if (PONG.getPuckY() > PONG.getOpponentY()+ 75) {
 					
 					if (PONG.getOpponentY() <= ROOTFRAME.getHeight() - 200) {
-						PONG.setOpponentY(2);
+						PONG.addOpponentY(2);
 					}
 					
 				
@@ -29,7 +29,7 @@ public class Opponent {
 				} else if (PONG.getPuckY() < PONG.getOpponentY() + 75) {
 					
 					if (PONG.getOpponentY() >= 20) {
-						PONG.setOpponentY(-2);
+						PONG.addOpponentY(-2);
 					}
 
 				} 

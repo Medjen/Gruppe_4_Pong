@@ -2,13 +2,12 @@ package de.hft.ip1.pong;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
-import static de.hft.ip1.pong.Application.ROOTFRAME;
 import static de.hft.ip1.pong.Application.PONG;
+
 public class KeyHandler implements KeyListener {
 
 	@Override
 	public void keyTyped(KeyEvent e) {
-
 	}
 
 	@Override
@@ -16,7 +15,7 @@ public class KeyHandler implements KeyListener {
 
 		if (e.getKeyCode() == KeyEvent.VK_UP) {
 			PONG.setMoveUp(true);
-		
+
 		} else if (e.getKeyCode() == KeyEvent.VK_DOWN) {
 			PONG.setMoveDown(true);
 		}
@@ -30,7 +29,7 @@ public class KeyHandler implements KeyListener {
 		} else if (e.getKeyCode() == KeyEvent.VK_DOWN) {
 			PONG.setMoveDown(false);
 		}
-		
+
 	}
 
 }

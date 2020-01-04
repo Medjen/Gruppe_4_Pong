@@ -21,7 +21,7 @@ public class PlayFieldPanel extends JLabel{
 		g.setColor(Color.BLACK);
 		g.fillRect(0, 0, ROOTFRAME.getWidth(), ROOTFRAME.getHeight());
 		
-		g.setColor(Color.WHITE);
+		g.setColor(Color.GREEN);
 		
 		for(int i = 0; i<= 30; i++){
 			g.fillRect(ROOTFRAME.getWidth()/2 -5, i * 20, 10, 10);

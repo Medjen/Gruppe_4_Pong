@@ -12,8 +12,8 @@ Timer move;
 			@Override
 			public void run() {
 				
-				PONG.setPuckX(PONG.getPuckDirX());
-				PONG.setPuckY(PONG.getPuckDirY());
+				PONG.addPuckX(PONG.getPuckDirX());
+				PONG.addPuckY(PONG.getPuckDirY());
 				
 				
 			}

@@ -1,32 +1,31 @@
 package de.hft.ip1.pong;
 
-import java.awt.Font;
-import java.awt.FontFormatException;
-import java.awt.GraphicsEnvironment;
-import java.io.File;
-import java.io.IOException;
-
-import javax.swing.*;
-
 public class Pong {
 
 	private int windowWidth;
 	private int windowHeight;
 
-	private int playerX = 20, playerY = 185;
-	private int opponentX = 755, opponentY = 185;
-	private int puckX = 200, puckY = 200;
+	private int playerX = 20;
+	private int playerY = 185;
 
-	private boolean moveUp = false, moveDown = false;
+	private int opponentX = 755;
+	private int opponentY = 185;
 
-	private int PuckDirX = 1, PuckDirY = -1;
+	private int puckX = 200;
+	private int puckY = 200;
 
-	private int PlayerPoints = 0, OpponentPoints = 0;
+	private boolean moveUp = false;
+	private boolean moveDown = false;
+
+	private int puckDirX = 1;
+	private int puckDirY = -1;
+
+	private int playerPoints = 0;
+	private int opponentPoints = 0;
 
 	public Pong(int windowWidth, int windowHeight) {
 		this.windowHeight = windowHeight;
 		this.windowWidth = windowWidth;
-
 	}
 
 	public int getWindowWidth() {
@@ -66,7 +65,7 @@ public class Pong {
 	}
 
 	public void setOpponentX(int opponentX) {
-		this.opponentX += opponentX;
+		this.opponentX = opponentX;
 	}
 
 	public int getOpponentY() {
@@ -74,7 +73,7 @@ public class Pong {
 	}
 
 	public void setOpponentY(int opponentY) {
-		this.opponentY += opponentY;
+		this.opponentY = opponentY;
 	}
 
 	public int getPuckX() {
@@ -110,35 +109,75 @@ public class Pong {
 	}
 
 	public int getPuckDirX() {
-		return PuckDirX;
+		return puckDirX;
 	}
 
 	public void setPuckDirX(int puckDirX) {
-		PuckDirX += puckDirX;
+		this.puckDirX = puckDirX;
 	}
 
 	public int getPuckDirY() {
-		return PuckDirY;
+		return puckDirY;
 	}
 
 	public void setPuckDirY(int puckDirY) {
-		PuckDirY += puckDirY;
+		this.puckDirY = puckDirY;
 	}
 
 	public int getPlayerPoints() {
-		return PlayerPoints;
+		return playerPoints;
 	}
 
 	public void setPlayerPoints(int playerPoints) {
-		PlayerPoints += playerPoints;
+		this.playerPoints = playerPoints;
 	}
 
 	public int getOpponentPoints() {
-		return OpponentPoints;
+		return opponentPoints;
 	}
 
 	public void setOpponentPoints(int opponentPoints) {
-		OpponentPoints += opponentPoints;
+		this.opponentPoints = opponentPoints;
+	}
+
+	public void addPlayerPoints(int playerPoints) {
+		this.playerPoints += playerPoints;
+	}
+
+	public void addOpponentPoints(int opponentPoints) {
+		this.opponentPoints += opponentPoints;
+	}
+
+	public void addPuckDirX(int puckDirX) {
+		this.puckDirX += puckDirX;
+	}
+
+	public void addPuckDirY(int puckDirY) {
+		this.puckDirY += puckDirY;
+	}
+
+	public void addOpponentY(int opponentY) {
+		this.opponentY += opponentY;
+	}
+
+	public void addOpponentX(int opponentX) {
+		this.opponentX += opponentX;
+	}
+
+	public void addPlayerY(int playerY) {
+		this.playerY += playerY;
+	}
+
+	public void addPlayerX(int playerX) {
+		this.playerX += playerX;
+	}
+
+	public void addPuckX(int puckX) {
+		this.puckX += puckX;
+	}
+
+	public void addPuckY(int puckY) {
+		this.puckY += puckY;
 	}
 
 }

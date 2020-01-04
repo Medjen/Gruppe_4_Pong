@@ -5,10 +5,10 @@ import static de.hft.ip1.pong.Application.ROOTFRAME;
 import java.util.Timer;
 import java.util.TimerTask;
 public class PuckCollision {
-Timer kollision;
+Timer collision;
 	public PuckCollision() {
-		kollision = new Timer();
-		kollision.scheduleAtFixedRate(new TimerTask(){
+		collision = new Timer();
+		collision.scheduleAtFixedRate(new TimerTask(){
 
 			@Override
 			public void run() {
@@ -27,7 +27,7 @@ Timer kollision;
 					PONG.setPuckY(ROOTFRAME.getHeight() /2 -10);
 					
 					PONG.setPuckDirX(-1);
-					PONG.setPlayerPoints(1);
+					PONG.addPlayerPoints(1);
 					
 				}
 				
@@ -37,16 +37,18 @@ Timer kollision;
 					PONG.setPuckY(ROOTFRAME.getHeight() /2 -10);
 					
 					PONG.setPuckDirX(-1);
-					PONG.setOpponentPoints(1);
+					PONG.addOpponentPoints(1);
 					
 				}
 				
 				if(PONG.getPuckX() < PONG.getPlayerX() +25 && PONG.getPuckX() > PONG.getPlayerX() && PONG.getPuckY() -20 < PONG.getPlayerY() + 150 &&  PONG.getPuckY() > PONG.getPlayerY()){
 					PONG.setPuckDirX(1);
+				//	PONG.addPuckSpeed(1);
 				}
 				
 				if(PONG.getPuckX() < PONG.getOpponentX() && PONG.getPuckX() > PONG.getOpponentX() -20 && PONG.getPuckY() -20 < PONG.getOpponentY() + 150 &&  PONG.getPuckY() > PONG.getOpponentY()){
 					PONG.setPuckDirX(-1);
+				//	PONG.addPuckSpeed(1);
 				}
 				
 			}

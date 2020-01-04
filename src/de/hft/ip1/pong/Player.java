@@ -16,13 +16,13 @@ private Timer move;
 				
 				if(PONG.isMoveUp() == true){
 					
-					if(PONG.getPlayerX() >=20){
-						PONG.setPlayerY(-2);
+					if(PONG.getPlayerY() >=20){
+						PONG.addPlayerY(-2);
 					}
 				}else if(PONG.isMoveDown() == true){
 					
 					if(PONG.getPlayerY() <= ROOTFRAME.getHeight() - 200){
-						PONG.setPlayerY(2);
+						PONG.addPlayerY(2);
 					}
 				}
 				
