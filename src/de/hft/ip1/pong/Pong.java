@@ -1,18 +1,17 @@
 package de.hft.ip1.pong;
 
+import java.awt.Dimension;
+
 public class Pong {
 
-	private int windowWidth;
-	private int windowHeight;
-
 	private int playerX = 20;
-	private int playerY = 185;
+	private int playerY;
 
-	private int opponentX = 755;
-	private int opponentY = 185;
+	private int opponentX;
+	private int opponentY;
 
-	private int puckX = 200;
-	private int puckY = 200;
+	private int puckX;
+	private int puckY;
 
 	private boolean moveUp = false;
 	private boolean moveDown = false;
@@ -23,25 +22,12 @@ public class Pong {
 	private int playerPoints = 0;
 	private int opponentPoints = 0;
 
-	public Pong(int windowWidth, int windowHeight) {
-		this.windowHeight = windowHeight;
-		this.windowWidth = windowWidth;
-	}
-
-	public int getWindowWidth() {
-		return windowWidth;
-	}
-
-	public void setWindowWidth(int windowWidth) {
-		this.windowWidth = windowWidth;
-	}
-
-	public int getWindowHeight() {
-		return windowHeight;
-	}
-
-	public void setWindowHeight(int windowHeight) {
-		this.windowHeight = windowHeight;
+	public Pong(Dimension playFieldSize) {
+		opponentX = playFieldSize.width - 50;
+		opponentY = playFieldSize.height / 2 - 75;
+		playerY = playFieldSize.height / 2 - 75;
+		puckX = playFieldSize.width / 2;
+		puckY = playFieldSize.height / 2;
 	}
 
 	public int getPlayerX() {

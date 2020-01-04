@@ -1,6 +1,6 @@
 package de.hft.ip1.pong;
 
-import static de.hft.ip1.pong.Application.PONG;
+import static de.hft.ip1.pong.InGame.PONG;
 import static de.hft.ip1.pong.Application.ROOTFRAME;
 import java.util.Timer;
 import java.util.TimerTask;

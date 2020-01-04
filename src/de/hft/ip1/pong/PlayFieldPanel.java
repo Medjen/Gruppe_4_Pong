@@ -4,7 +4,7 @@ import java.awt.*;
 
 import javax.swing.JLabel;
 import static de.hft.ip1.pong.Application.ROOTFRAME;
-import static de.hft.ip1.pong.Application.PONG;
+import static de.hft.ip1.pong.InGame.PONG;
 public class PlayFieldPanel extends JLabel{
 
 		// TODO Auto-generated constructor stub
@@ -23,7 +23,7 @@ public class PlayFieldPanel extends JLabel{
 		
 		g.setColor(Color.GREEN);
 		
-		for(int i = 0; i<= 30; i++){
+		for(int i = 0; i<= ROOTFRAME.getHeight()/20; i++){
 			g.fillRect(ROOTFRAME.getWidth()/2 -5, i * 20, 10, 10);
 		}
 		

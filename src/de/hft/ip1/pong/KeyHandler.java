@@ -2,7 +2,7 @@ package de.hft.ip1.pong;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
-import static de.hft.ip1.pong.Application.PONG;
+import static de.hft.ip1.pong.InGame.PONG;
 
 public class KeyHandler implements KeyListener {
 

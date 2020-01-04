@@ -3,7 +3,7 @@ package de.hft.ip1.pong;
 import java.util.Timer;
 import java.util.TimerTask;
 import static de.hft.ip1.pong.Application.ROOTFRAME;
-import static de.hft.ip1.pong.Application.PONG;
+import static de.hft.ip1.pong.InGame.PONG;
 public class Opponent {
 	private Timer move;
 	public Opponent() {
