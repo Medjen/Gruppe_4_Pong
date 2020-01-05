@@ -24,7 +24,7 @@ public class PlayFieldPanel extends JLabel {
 		g.setColor(Color.GREEN);
 
 		for (int i = 0; i <= ROOTFRAME.getHeight() / 20; i++) {
-			g.fillRect(ROOTFRAME.getWidth() / 2 - 5, i * 20, 10, 10);
+			g.fillOval(ROOTFRAME.getWidth() / 2 - 5, i * 20, 10, 10);
 		}
 
 		g.fillRect(PONG.getPlayerX(), PONG.getPlayerY(), 25, 150);
@@ -36,7 +36,7 @@ public class PlayFieldPanel extends JLabel {
 		g.drawString("" + PONG.getPlayerPoints(), ROOTFRAME.getWidth() / 2 - 75, 75);
 		g.drawString("" + PONG.getOpponentPoints(), ROOTFRAME.getWidth() / 2 + 50, 75);
 
-		g.fillRect(PONG.getPuckX(), PONG.getPuckY(), 20, 20);
+		g.fillOval(PONG.getPuckX(), PONG.getPuckY(), 20, 20);
 
 		repaint();
 
