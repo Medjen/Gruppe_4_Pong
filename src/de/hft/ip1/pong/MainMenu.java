@@ -37,7 +37,7 @@ public class MainMenu extends JPanel {
 	private JLabel heightLabel;
 	private JLabel px1;
 	private JLabel px2;
-
+	private JTable table;
 	/**
 	 * Operation MainMenu.<br />
 	 * 
@@ -102,6 +102,16 @@ public class MainMenu extends JPanel {
 
 		btnExit.addActionListener(e -> {
 			ROOTFRAME.dispose();
+		});
+		
+		btnHighScore.addActionListener(e -> {
+
+			HighScore highScore = new HighScore();
+			table = new JTable(highScore);
+			table.setDefaultEditor(Object.class, null);
+			table.getTableHeader().setReorderingAllowed(false);
+			JOptionPane.showConfirmDialog(null, new JScrollPane(table), "Highscores", JOptionPane.CLOSED_OPTION,
+					JOptionPane.PLAIN_MESSAGE);
 		});
 
 		btnStartNewGame.addActionListener(e -> {
