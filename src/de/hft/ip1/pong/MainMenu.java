@@ -3,13 +3,14 @@ package de.hft.ip1.pong;
 import javax.swing.*;
 import static de.hft.ip1.pong.Application.ROOTFRAME;
 
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 
 public class MainMenu extends JPanel {
 
-	private int width_px = 500;
-	private int height_px = 500;
+	private int width_px = 800;
+	private int height_px = 600;
 
 	/** Attributes */
 	/**
@@ -21,7 +22,7 @@ public class MainMenu extends JPanel {
 	 * button to exit the game
 	 */
 	private JButton btnExit;
-
+	private JButton btnHighScore;
 	/**
 	 * Textfield to enter the wished playfield height
 	 */
@@ -52,11 +53,12 @@ public class MainMenu extends JPanel {
 		height = new JTextField("" + height_px);
 		btnExit = new JButton("Beenden");
 		btnStartNewGame = new JButton("Start");
+		btnHighScore = new JButton("Highscore");
 		widthLabel = new JLabel("Breite:");
 		heightLabel = new JLabel("Hoehe:");
 		px1 = new JLabel("px");
 		px2 = new JLabel("px");
-		ROOTFRAME.setSize(220, 200);
+		ROOTFRAME.setSize(170, 275);
 		initComponents();
 	}
 
@@ -71,26 +73,32 @@ public class MainMenu extends JPanel {
 		widthLabel.setBounds(10, 20, 120, 30);
 		ROOTFRAME.add(widthLabel);
 
-		width.setBounds(55, 20, 125, 30);
+		width.setBounds(55, 20, 80, 30);
 		ROOTFRAME.add(width);
 
-		px1.setBounds(182, 20, 30, 30);
+		px1.setBounds(137, 20, 30, 30);
 		ROOTFRAME.add(px1);
 
 		heightLabel.setBounds(10, 70, 120, 30);
 		ROOTFRAME.add(heightLabel);
 
-		height.setBounds(55, 70, 125, 30);
+		height.setBounds(55, 70, 80, 30);
 		ROOTFRAME.add(height);
 
-		px2.setBounds(182, 70, 30, 30);
+		px2.setBounds(137, 70, 30, 30);
 		ROOTFRAME.add(px2);
 
-		btnExit.setBounds(10, 120, 85, 30);
-		ROOTFRAME.add(btnExit);
-
-		btnStartNewGame.setBounds(110, 120, 85, 30);
+		btnStartNewGame.setBounds(10, 120, 145, 30);
+		btnStartNewGame.setForeground(Color.GREEN);
 		ROOTFRAME.add(btnStartNewGame);
+
+		btnHighScore.setBounds(10, 160, 145, 30);
+		btnHighScore.setForeground(Color.BLUE);
+		ROOTFRAME.add(btnHighScore);
+		
+		btnExit.setBounds(10, 200, 145, 30);
+		btnExit.setForeground(Color.RED);
+		ROOTFRAME.add(btnExit);
 
 		btnExit.addActionListener(e -> {
 			ROOTFRAME.dispose();
