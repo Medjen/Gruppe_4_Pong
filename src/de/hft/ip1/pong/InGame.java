@@ -29,11 +29,6 @@ public class InGame {
 	
 	public void init() {
 		
-		new Player();
-		new Opponent();
-		new PuckMovement();
-		new PuckCollision();
-		
 		ROOTFRAME.getContentPane().removeAll();
 		ROOTFRAME.setLocationRelativeTo(null);
 		ROOTFRAME.setSize(playFieldSize.width, playFieldSize.height);
@@ -50,6 +45,10 @@ public class InGame {
 		lbldraw.setVisible(true);
 		ROOTFRAME.add(lbldraw);
 		
+		new Player();
+		new Opponent();
+		new PuckMovement();
+		new PuckCollision();
 	}
 	
 }
