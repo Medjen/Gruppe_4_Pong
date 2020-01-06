@@ -18,7 +18,8 @@ public class Pong {
 
 	private int puckDirX = 1;
 	private int puckDirY = -1;
-	private double puckSpeed =1.0;
+	private double puckSpeed = 1.0;
+	private int points = 0;
 
 
 	private int playerPoints = 0;
@@ -179,5 +180,16 @@ public class Pong {
 	public void addPuckSpeed(double puckSpeed) {
 		this.puckSpeed += puckSpeed;
 	}
+	public int getPoints() {
+		return points;
+	}
+
+	public void setPoints(int points) {
+		this.points = points;
+	}
+	public void addPoints(int points) {
+		this.points += points;
+	}
+
 
 }

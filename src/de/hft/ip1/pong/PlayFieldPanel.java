@@ -35,9 +35,9 @@ public class PlayFieldPanel extends JLabel {
 		g.setFont(newFont);
 		g.drawString("" + PONG.getPlayerPoints(), ROOTFRAME.getWidth() / 2 - 75, 75);
 		g.drawString("" + PONG.getOpponentPoints(), ROOTFRAME.getWidth() / 2 + 50, 75);
-
-		g.fillOval((int)PONG.getPuckX(),(int) PONG.getPuckY(), 20, 20);
-
+		// g.drawString("Punkte : " + PONG.getPoints(), 10, 30);
+		g.fillOval((int) PONG.getPuckX(), (int) PONG.getPuckY(), 20, 20);
+		ROOTFRAME.setTitle("Pong - Points : " + PONG.getPoints());
 		repaint();
 
 	}

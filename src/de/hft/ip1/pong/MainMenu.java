@@ -58,7 +58,7 @@ public class MainMenu extends JPanel {
 		heightLabel = new JLabel("Hoehe:");
 		px1 = new JLabel("px");
 		px2 = new JLabel("px");
-		ROOTFRAME.setSize(180, 275);
+		ROOTFRAME.setSize(300, 275);
 		initComponents();
 	}
 
@@ -89,7 +89,7 @@ public class MainMenu extends JPanel {
 		ROOTFRAME.add(px2);
 
 		btnStartNewGame.setBounds(10, 120, 145, 30);
-		btnStartNewGame.setForeground(Color.GREEN);
+		btnStartNewGame.setForeground(Color.BLACK);
 		ROOTFRAME.add(btnStartNewGame);
 
 		btnHighScore.setBounds(10, 160, 145, 30);
