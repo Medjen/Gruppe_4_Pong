@@ -1,5 +1,10 @@
 package de.hft.ip1.pong;
 
+import static de.hft.ip1.pong.Application.BASEFOLDER;
+
+import java.io.File;
+import java.io.IOException;
+
 import javax.swing.JFrame;
 
 public class Application {
@@ -22,6 +27,17 @@ public class Application {
 	 * @param args - CLI arguments
 	 */
 	public static void main(String[] args) {
+
+		File dir = new File(BASEFOLDER);
+		if (!dir.exists()) {
+			dir.mkdirs();
+		}
+		File file = new File(BASEFOLDER + "/highscores.txt");
+		try {
+			file.createNewFile();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 
 		ROOTFRAME.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		ROOTFRAME.setLocation(600, 300);

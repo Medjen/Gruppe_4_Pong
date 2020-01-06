@@ -20,34 +20,22 @@ public class HighScore extends AbstractTableModel {
 
 	public HighScore() {
 
-		File dir = new File(BASEFOLDER);
-		if (!dir.exists()) {
-			dir.mkdirs();
-		}
-		File file = new File(BASEFOLDER + "/highscores.txt");
-		try {
-			file.createNewFile();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		try (InputStream in = new FileInputStream(file);
+		try (InputStream in = new FileInputStream(BASEFOLDER + "/highscores.txt");
 				BufferedReader reader = new BufferedReader(new InputStreamReader(in, "ISO-8859-1"));) {
-			ArrayList<Integer> points = new ArrayList<>();
-			ArrayList<String> names = new ArrayList<>();
+			
+			ArrayList<String> content = new ArrayList<>();
 			reader.lines().forEach(e -> {
 				if (e.contains(";")) {
-					this.rowCount++;
-					String[] fields = e.split(";");
-					names.add(fields[0]);
-					points.add(Integer.parseInt(fields[1]));
+					content.add(e);
 				}
 			});
 
-			rows = new String[rowCount][columns.length];
+			rows = new String[content.size()][columns.length];
 
-			for (int i = 0; i < points.size(); i++) {
-				rows[i][2] = "" + points.get(i);
-				rows[i][1] = "" + names.get(i);
+			for (int i = 0; i < content.size(); i++) {
+				String[] fields = content.get(i).split(";");
+				rows[i][1] = fields[0];
+				rows[i][2] = fields[1];
 			}
 
 			Arrays.sort(rows, (a, b) -> Integer.compare(Integer.parseInt(b[2]), Integer.parseInt(a[2])));
@@ -86,9 +74,9 @@ public class HighScore extends AbstractTableModel {
 	public Object getValueAt(int arg0, int arg1) {
 		return rows[arg0][arg1];
 	}
-	
+
 	@Override
 	public String getColumnName(int col) {
-	    return columns[col];
+		return columns[col];
 	}
 }
