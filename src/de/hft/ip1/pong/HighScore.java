@@ -1,7 +1,6 @@
 package de.hft.ip1.pong;
 
 import java.io.BufferedReader;
-import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -16,7 +15,6 @@ import static de.hft.ip1.pong.Application.BASEFOLDER;
 public class HighScore extends AbstractTableModel {
 	private String[] columns = { "Platz", "Name", "Punkte" };
 	private String[][] rows;
-	private int rowCount;
 
 	public HighScore() {
 
