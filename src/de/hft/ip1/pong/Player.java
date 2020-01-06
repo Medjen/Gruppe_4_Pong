@@ -5,7 +5,7 @@ import java.util.TimerTask;
 import static de.hft.ip1.pong.Application.ROOTFRAME;
 import static de.hft.ip1.pong.InGame.PONG;
 public class Player {
-private Timer move;
+static Timer move;
 	public Player() {
 		move = new Timer();
 	

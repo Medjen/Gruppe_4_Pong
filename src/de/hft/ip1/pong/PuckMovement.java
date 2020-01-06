@@ -5,7 +5,7 @@ import java.util.TimerTask;
 import static de.hft.ip1.pong.InGame.PONG;
 
 public class PuckMovement {
-	Timer move;
+	static Timer move;
 
 	public PuckMovement() {
 		move = new Timer();

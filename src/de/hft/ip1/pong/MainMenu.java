@@ -58,7 +58,7 @@ public class MainMenu extends JPanel {
 		heightLabel = new JLabel("Hoehe:");
 		px1 = new JLabel("px");
 		px2 = new JLabel("px");
-		ROOTFRAME.setSize(170, 275);
+		ROOTFRAME.setSize(180, 275);
 		initComponents();
 	}
 
@@ -102,6 +102,7 @@ public class MainMenu extends JPanel {
 
 		btnExit.addActionListener(e -> {
 			ROOTFRAME.dispose();
+			System.exit(0);
 		});
 		
 		btnHighScore.addActionListener(e -> {

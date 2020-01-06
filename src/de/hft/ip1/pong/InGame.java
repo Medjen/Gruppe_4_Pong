@@ -47,6 +47,16 @@ public class InGame {
 		new PuckMovement();
 		new PuckCollision();
 	}
+	public static void Stoppen() {
+		PuckCollision.collision.cancel();
+		PuckMovement.move.cancel();
+		Player.move.cancel();
+	}
+	public static void Starzen() {
+		PuckCollision.collision.purge();
+		PuckMovement.move.purge();
+		Player.move.purge();
+	}
 	
 }
 
