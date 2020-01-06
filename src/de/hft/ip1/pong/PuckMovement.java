@@ -14,8 +14,8 @@ public class PuckMovement {
 			@Override
 			public void run() {
 
-				PONG.addPuckX(PONG.getPuckDirX());
-				PONG.addPuckY(PONG.getPuckDirY());
+				PONG.addPuckX((PONG.getPuckDirX()*PONG.getPuckSpeed()));
+				PONG.addPuckY((PONG.getPuckDirY()*PONG.getPuckSpeed()));
 
 			}
 		}, 0, 4);

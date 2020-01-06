@@ -1,38 +1,43 @@
 package de.hft.ip1.pong;
 
 import java.io.File;
+import java.io.IOException;
 
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
 
 public class Musik {
-	
-public static synchronized void music(String track) {
-	
-	final String trackname = track;
-	
-	new Thread (new Runnable() {
-		
-		@Override
-		public void run() {
-			while (true) {
-				
-				try {
-					
-					Clip clip = AudioSystem.getClip();
-					AudioInputStream inputstream = AudioSystem.getAudioInputStream(new File (trackname));
-					clip.open(inputstream);
-					clip.loop(clip.LOOP_CONTINUOUSLY);
-					
-					Thread.sleep(clip.getMicrosecondLength()/1000);
-	
-				}catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-			
+	static String filepath = "src/music/background2.wav";
+	Clip clip;
+	AudioInputStream inputstream;
+
+	public void music() {
+
+		try {
+			inputstream = AudioSystem.getAudioInputStream(new File(filepath).getAbsoluteFile());
+		} catch (UnsupportedAudioFileException | IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
 		}
-	}).start();
-}
+
+		try {
+			clip = AudioSystem.getClip();
+		} catch (LineUnavailableException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		try {
+			clip.open(inputstream);
+		} catch (LineUnavailableException | IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		clip.loop(clip.LOOP_CONTINUOUSLY);
+		clip.start();
+	}
+
+	
 }

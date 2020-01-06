@@ -38,17 +38,23 @@ Timer collision;
 					
 					PONG.setPuckDirX(-1);
 					PONG.addOpponentPoints(1);
+					if(PONG.getOpponentPoints()>=PONG.getPlayerPoints()+2) {
+						System.out.println("Verloren");
+					}
+					PONG.setPuckSpeed(1.0);
 					
 				}
 				
 				if(PONG.getPuckX() < PONG.getPlayerX() +25 && PONG.getPuckX() > PONG.getPlayerX() && PONG.getPuckY() -20 < PONG.getPlayerY() + 150 &&  PONG.getPuckY() > PONG.getPlayerY()){
 					PONG.setPuckDirX(1);
 				//	PONG.addPuckSpeed(1);
+					PONG.addPuckSpeed(0.02);
 				}
 				
 				if(PONG.getPuckX() < PONG.getOpponentX() && PONG.getPuckX() > PONG.getOpponentX() -20 && PONG.getPuckY() -20 < PONG.getOpponentY() + 150 &&  PONG.getPuckY() > PONG.getOpponentY()){
 					PONG.setPuckDirX(-1);
 				//	PONG.addPuckSpeed(1);
+					PONG.addPuckSpeed(0.02);
 				}
 				
 			}

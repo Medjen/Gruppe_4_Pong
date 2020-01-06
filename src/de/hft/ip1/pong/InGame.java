@@ -1,12 +1,9 @@
 package de.hft.ip1.pong;
 
-import javax.sound.sampled.AudioInputStream;
+
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
 import javax.swing.JFrame;
-
-import sun.audio.AudioPlayer;
-import sun.audio.AudioStream;
 
 import static de.hft.ip1.pong.Application.ROOTFRAME;
 
@@ -44,7 +41,7 @@ public class InGame {
 		lbldraw.setBounds(0,0, playFieldSize.width, playFieldSize.height);
 		lbldraw.setVisible(true);
 		ROOTFRAME.add(lbldraw);
-		
+	
 		new Player();
 		new Opponent();
 		new PuckMovement();

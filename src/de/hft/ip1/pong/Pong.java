@@ -10,14 +10,16 @@ public class Pong {
 	private int opponentX;
 	private int opponentY;
 
-	private int puckX;
-	private int puckY;
+	private double puckX;
+	private double puckY;
 
 	private boolean moveUp = false;
 	private boolean moveDown = false;
 
 	private int puckDirX = 1;
 	private int puckDirY = -1;
+	private double puckSpeed =1.0;
+
 
 	private int playerPoints = 0;
 	private int opponentPoints = 0;
@@ -62,19 +64,19 @@ public class Pong {
 		this.opponentY = opponentY;
 	}
 
-	public int getPuckX() {
+	public double getPuckX() {
 		return puckX;
 	}
 
-	public void setPuckX(int puckX) {
+	public void setPuckX(double puckX) {
 		this.puckX = puckX;
 	}
 
-	public int getPuckY() {
+	public double getPuckY() {
 		return puckY;
 	}
 
-	public void setPuckY(int puckY) {
+	public void setPuckY(double puckY) {
 		this.puckY = puckY;
 	}
 
@@ -158,12 +160,24 @@ public class Pong {
 		this.playerX += playerX;
 	}
 
-	public void addPuckX(int puckX) {
+	public void addPuckX(double puckX) {
 		this.puckX += puckX;
 	}
 
-	public void addPuckY(int puckY) {
+	public void addPuckY(double puckY) {
 		this.puckY += puckY;
+	}
+
+	public double getPuckSpeed() {
+		return puckSpeed;
+	}
+
+	public void setPuckSpeed(double puckSpeed) {
+		this.puckSpeed = puckSpeed;
+	}
+
+	public void addPuckSpeed(double puckSpeed) {
+		this.puckSpeed += puckSpeed;
 	}
 
 }
