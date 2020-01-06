@@ -49,12 +49,15 @@ Timer collision;
 					PONG.setPuckDirX(1);
 				//	PONG.addPuckSpeed(1);
 					PONG.addPuckSpeed(0.02);
+					new Musik("src/music/pucksound.wav");
 				}
 				
 				if(PONG.getPuckX() < PONG.getOpponentX() && PONG.getPuckX() > PONG.getOpponentX() -20 && PONG.getPuckY() -20 < PONG.getOpponentY() + 150 &&  PONG.getPuckY() > PONG.getOpponentY()){
 					PONG.setPuckDirX(-1);
 				//	PONG.addPuckSpeed(1);
 					PONG.addPuckSpeed(0.02);
+					new Musik("src/music/pucksound.wav");
+
 				}
 				
 			}

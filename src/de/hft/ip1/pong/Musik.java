@@ -10,11 +10,12 @@ import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
 
 public class Musik {
-	static String filepath = "src/music/background2.wav";
+	String filepath;
 	Clip clip;
 	AudioInputStream inputstream;
 
-	public void music() {
+	public Musik(String filepath) {
+		this.filepath = filepath;
 
 		try {
 			inputstream = AudioSystem.getAudioInputStream(new File(filepath).getAbsoluteFile());
@@ -35,9 +36,10 @@ public class Musik {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
-		clip.loop(clip.LOOP_CONTINUOUSLY);
+		if (filepath.equals("src/music/background2.wav")) {
+			clip.loop(clip.LOOP_CONTINUOUSLY);
+		}
 		clip.start();
 	}
 
-	
 }

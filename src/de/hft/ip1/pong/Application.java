@@ -48,8 +48,8 @@ public class Application {
 		ROOTFRAME.setFocusTraversalKeysEnabled(false);
 
 		new MainMenu();
-		Musik audioplayer = new Musik();
-		audioplayer.music();
+		new Musik("src/music/background2.wav");
+	
 	}
 
 }
