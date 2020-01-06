@@ -9,12 +9,14 @@ import java.io.PrintWriter;
 
 public class AfterGame {
 	public AfterGame(String name, int points) {
-		try (FileWriter fw = new FileWriter(BASEFOLDER + "/highscores.txt", true);
-				BufferedWriter bw = new BufferedWriter(fw);
-				PrintWriter out = new PrintWriter(bw)) {
-			out.println(name + ";" + points);
-		} catch (IOException e) {
-			e.printStackTrace();
+		if (!name.contains(";")) {
+			try (FileWriter fw = new FileWriter(BASEFOLDER + "/highscores.txt", true);
+					BufferedWriter bw = new BufferedWriter(fw);
+					PrintWriter out = new PrintWriter(bw)) {
+				out.println(name + ";" + points);
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
 		}
 	}
 }
