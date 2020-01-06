@@ -1,8 +1,5 @@
 # Gruppe_4_Pong
 
-http://fox-den.de/files/Pong.rar
-
-
 ## Mindestanforderungen
   - [x] 1 Titel im Fenster
   - [ ] 1 Titel in Leiste 
@@ -17,8 +14,8 @@ http://fox-den.de/files/Pong.rar
   - [x] 5 Spieler Bewegung reagiert gut
 
 ## Nice-to-Have
-  - [ ] 10 Punktesystem 
-  - [ ] 5 Highscores werden gespeichert 
+  - [x] 10 Punktesystem 
+  - [x] 5 Highscores werden gespeichert 
   - [x] 10 Spielfeldgröße frei wählbar 
   - [x] 5 Soundeﬀekte 
   - [x] 5 Hintergrundmusik 
