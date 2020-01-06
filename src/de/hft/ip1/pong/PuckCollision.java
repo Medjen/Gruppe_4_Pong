@@ -28,7 +28,13 @@ Timer collision;
 					
 					PONG.setPuckDirX(-1);
 					PONG.addPlayerPoints(1);
-					
+					if(PONG.getPlayerPoints()>=PONG.getOpponentPoints()+2) {
+						System.out.println("gewonnen");
+						new AfterGame(1000);
+
+						
+					}
+					PONG.setPuckSpeed(1.0);
 				}
 				
 				if(PONG.getPuckX() <= 0){
@@ -40,6 +46,7 @@ Timer collision;
 					PONG.addOpponentPoints(1);
 					if(PONG.getOpponentPoints()>=PONG.getPlayerPoints()+2) {
 						System.out.println("Verloren");
+						new AfterGame(1000);
 					}
 					PONG.setPuckSpeed(1.0);
 					

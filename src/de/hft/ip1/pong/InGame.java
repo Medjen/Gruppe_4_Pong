@@ -25,7 +25,6 @@ public class InGame {
 	}
 	
 	public void init() {
-		
 		ROOTFRAME.getContentPane().removeAll();
 		ROOTFRAME.setLocationRelativeTo(null);
 		ROOTFRAME.setSize(playFieldSize.width, playFieldSize.height);
