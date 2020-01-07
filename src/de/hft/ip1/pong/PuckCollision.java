@@ -36,7 +36,7 @@ public class PuckCollision {
 					PONG.addPlayerPoints(1);
 					if (PONG.getPlayerPoints() >= PONG.getOpponentPoints() + 2) {
 						PONG.addPoints(2000);
-						Aftergamewon();
+						AftergameWon();
 					}
 					PONG.setPuckSpeed(1.0);
 
@@ -51,7 +51,7 @@ public class PuckCollision {
 					PONG.addOpponentPoints(1);
 
 					if (PONG.getOpponentPoints() >= PONG.getPlayerPoints() + 2) {
-						Aftergame();
+						AftergameLost();
 					}
 					PONG.setPuckSpeed(1.0);
 				}
@@ -79,7 +79,7 @@ public class PuckCollision {
 		}, 0, 4);
 	}
 
-	public void Aftergame() {
+	public void AftergameLost() {
 
 		InGame.stoppen();
 		String name = JOptionPane.showInputDialog(ROOTFRAME,
@@ -89,7 +89,7 @@ public class PuckCollision {
 		if (name != null) {
 			if (name.length() == 0) {
 				JOptionPane.showMessageDialog(ROOTFRAME, "Bitte geben sie Name ein");
-				Aftergame();
+				AftergameLost();
 				return;
 			} else {
 				new AfterGame(name, PONG.getPoints());
@@ -108,7 +108,7 @@ public class PuckCollision {
 		new MainMenu();
 	}
 
-	public void Aftergamewon() {
+	public void AftergameWon() {
 
 		InGame.stoppen();
 		String name = JOptionPane.showInputDialog(ROOTFRAME,
@@ -118,7 +118,7 @@ public class PuckCollision {
 		if (name != null) {
 			if (name.length() == 0) {
 				JOptionPane.showMessageDialog(ROOTFRAME, "Bitte geben sie Name ein");
-				Aftergame();
+				AftergameLost();
 				return;
 			} else {
 				new AfterGame(name, PONG.getPoints());
