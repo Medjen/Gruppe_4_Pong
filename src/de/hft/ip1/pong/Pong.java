@@ -21,7 +21,6 @@ public class Pong {
 	private double puckSpeed = 1.0;
 	private int points = 0;
 
-
 	private int playerPoints = 0;
 	private int opponentPoints = 0;
 
@@ -180,6 +179,7 @@ public class Pong {
 	public void addPuckSpeed(double puckSpeed) {
 		this.puckSpeed += puckSpeed;
 	}
+
 	public int getPoints() {
 		return points;
 	}
@@ -187,9 +187,9 @@ public class Pong {
 	public void setPoints(int points) {
 		this.points = points;
 	}
+
 	public void addPoints(int points) {
 		this.points += points;
 	}
-
 
 }

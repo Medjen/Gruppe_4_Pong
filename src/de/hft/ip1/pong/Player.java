@@ -4,30 +4,32 @@ import java.util.Timer;
 import java.util.TimerTask;
 import static de.hft.ip1.pong.Application.ROOTFRAME;
 import static de.hft.ip1.pong.InGame.PONG;
+
 public class Player {
-static Timer move;
+	static Timer move;
+
 	public Player() {
 		move = new Timer();
-	
-		move.scheduleAtFixedRate(new TimerTask(){
+
+		move.scheduleAtFixedRate(new TimerTask() {
 
 			@Override
 			public void run() {
-				
-				if(PONG.isMoveUp() == true){
-					
-					if(PONG.getPlayerY() >=20){
+
+				if (PONG.isMoveUp() == true) {
+
+					if (PONG.getPlayerY() >= 20) {
 						PONG.addPlayerY(-2);
 					}
-				}else if(PONG.isMoveDown() == true){
-					
-					if(PONG.getPlayerY() <= ROOTFRAME.getHeight() - 200){
+				} else if (PONG.isMoveDown() == true) {
+
+					if (PONG.getPlayerY() <= ROOTFRAME.getHeight() - 200) {
 						PONG.addPlayerY(2);
 					}
 				}
-				
+
 			}
-			
+
 		}, 0, 6);
 	}
 

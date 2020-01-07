@@ -59,18 +59,18 @@ public class PuckCollision {
 				if (PONG.getPuckX() < PONG.getPlayerX() + 25 && PONG.getPuckX() > PONG.getPlayerX()
 						&& PONG.getPuckY() - 20 < PONG.getPlayerY() + 150 && PONG.getPuckY() > PONG.getPlayerY()) {
 					PONG.setPuckDirX(1);
-			
+
 					PONG.addPuckSpeed(0.02);
-					PONG.addPoints((int)(20*PONG.getPuckSpeed()));
-					new Musik("src/music/pucksound.wav");
+					PONG.addPoints((int) (20 * PONG.getPuckSpeed()));
+					new Music("src/music/pucksound.wav");
 				}
 
 				if (PONG.getPuckX() < PONG.getOpponentX() && PONG.getPuckX() > PONG.getOpponentX() - 20
 						&& PONG.getPuckY() - 20 < PONG.getOpponentY() + 150 && PONG.getPuckY() > PONG.getOpponentY()) {
 					PONG.setPuckDirX(-1);
-			
+
 					PONG.addPuckSpeed(0.02);
-					new Musik("src/music/pucksound.wav");
+					new Music("src/music/pucksound.wav");
 
 				}
 
@@ -81,8 +81,9 @@ public class PuckCollision {
 
 	public void Aftergame() {
 
-		InGame.Stoppen();
-		String name = JOptionPane.showInputDialog(ROOTFRAME, "Du hast " +PONG.getPoints() +" Punkte erreicht. \n\nName:", "Highscore",
+		InGame.stoppen();
+		String name = JOptionPane.showInputDialog(ROOTFRAME,
+				"Du hast " + PONG.getPoints() + " Punkte erreicht. \n\nName:", "Highscore",
 				JOptionPane.INFORMATION_MESSAGE);
 
 		if (name != null) {
@@ -106,33 +107,34 @@ public class PuckCollision {
 		ROOTFRAME.getContentPane().removeAll();
 		new MainMenu();
 	}
-	
-		public void Aftergamewon() {
 
-			InGame.Stoppen();
-			String name = JOptionPane.showInputDialog(ROOTFRAME,"Sie haben Gewonnent!\n" +"Du hast " +PONG.getPoints() +" Punkte erreicht. \n\nName:", "Highscore",
-					JOptionPane.INFORMATION_MESSAGE);
+	public void Aftergamewon() {
 
-			if (name != null) {
-				if (name.length() == 0) {
-					JOptionPane.showMessageDialog(ROOTFRAME, "Bitte geben sie Name ein");
-					Aftergame();
-					return;
-				} else {
-					new AfterGame(name, PONG.getPoints());
-				}
+		InGame.stoppen();
+		String name = JOptionPane.showInputDialog(ROOTFRAME,
+				"Sie haben Gewonnent!\n" + "Du hast " + PONG.getPoints() + " Punkte erreicht. \n\nName:", "Highscore",
+				JOptionPane.INFORMATION_MESSAGE);
 
-				HighScore highScore = new HighScore();
-				JTable table = new JTable(highScore);
-				table.setDefaultEditor(Object.class, null);
-				table.getTableHeader().setReorderingAllowed(false);
-				JOptionPane.showConfirmDialog(null, new JScrollPane(table), "Highscores", JOptionPane.CLOSED_OPTION,
-						JOptionPane.PLAIN_MESSAGE);
-
+		if (name != null) {
+			if (name.length() == 0) {
+				JOptionPane.showMessageDialog(ROOTFRAME, "Bitte geben sie Name ein");
+				Aftergame();
+				return;
+			} else {
+				new AfterGame(name, PONG.getPoints());
 			}
 
-			ROOTFRAME.getContentPane().removeAll();
-			new MainMenu();
+			HighScore highScore = new HighScore();
+			JTable table = new JTable(highScore);
+			table.setDefaultEditor(Object.class, null);
+			table.getTableHeader().setReorderingAllowed(false);
+			JOptionPane.showConfirmDialog(null, new JScrollPane(table), "Highscores", JOptionPane.CLOSED_OPTION,
+					JOptionPane.PLAIN_MESSAGE);
+
+		}
+
+		ROOTFRAME.getContentPane().removeAll();
+		new MainMenu();
 	}
 
 }

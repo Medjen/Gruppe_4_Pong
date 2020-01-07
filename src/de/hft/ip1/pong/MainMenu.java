@@ -38,6 +38,7 @@ public class MainMenu extends JPanel {
 	private JLabel px1;
 	private JLabel px2;
 	private JTable table;
+
 	/**
 	 * Operation MainMenu.<br />
 	 * 
@@ -70,33 +71,33 @@ public class MainMenu extends JPanel {
 	 */
 	private void initComponents() {
 
-		widthLabel.setBounds(10, 20, 120, 30);
+		widthLabel.setBounds(70, 20, 120, 30);
 		ROOTFRAME.add(widthLabel);
 
-		width.setBounds(55, 20, 80, 30);
+		width.setBounds(115, 20, 80, 30);
 		ROOTFRAME.add(width);
 
-		px1.setBounds(137, 20, 30, 30);
+		px1.setBounds(197, 20, 30, 30);
 		ROOTFRAME.add(px1);
 
-		heightLabel.setBounds(10, 70, 120, 30);
+		heightLabel.setBounds(70, 70, 120, 30);
 		ROOTFRAME.add(heightLabel);
 
-		height.setBounds(55, 70, 80, 30);
+		height.setBounds(115, 70, 80, 30);
 		ROOTFRAME.add(height);
 
-		px2.setBounds(137, 70, 30, 30);
+		px2.setBounds(197, 70, 30, 30);
 		ROOTFRAME.add(px2);
 
-		btnStartNewGame.setBounds(10, 120, 145, 30);
+		btnStartNewGame.setBounds(70, 120, 145, 30);
 		btnStartNewGame.setForeground(Color.BLACK);
 		ROOTFRAME.add(btnStartNewGame);
 
-		btnHighScore.setBounds(10, 160, 145, 30);
+		btnHighScore.setBounds(70, 160, 145, 30);
 		btnHighScore.setForeground(Color.BLUE);
 		ROOTFRAME.add(btnHighScore);
-		
-		btnExit.setBounds(10, 200, 145, 30);
+
+		btnExit.setBounds(70, 200, 145, 30);
 		btnExit.setForeground(Color.RED);
 		ROOTFRAME.add(btnExit);
 
@@ -104,7 +105,7 @@ public class MainMenu extends JPanel {
 			ROOTFRAME.dispose();
 			System.exit(0);
 		});
-		
+
 		btnHighScore.addActionListener(e -> {
 
 			HighScore highScore = new HighScore();

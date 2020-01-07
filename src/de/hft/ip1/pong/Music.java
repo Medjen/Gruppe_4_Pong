@@ -9,12 +9,12 @@ import javax.sound.sampled.Clip;
 import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
 
-public class Musik {
+public class Music {
 	String filepath;
 	Clip clip;
 	AudioInputStream inputstream;
 
-	public Musik(String filepath) {
+	public Music(String filepath) {
 		this.filepath = filepath;
 
 		try {

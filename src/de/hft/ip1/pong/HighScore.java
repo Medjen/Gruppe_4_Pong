@@ -20,7 +20,7 @@ public class HighScore extends AbstractTableModel {
 
 		try (InputStream in = new FileInputStream(BASEFOLDER + "/highscores.txt");
 				BufferedReader reader = new BufferedReader(new InputStreamReader(in, "ISO-8859-1"));) {
-			
+
 			ArrayList<String> content = new ArrayList<>();
 			reader.lines().forEach(e -> {
 				if (e.contains(";")) {
