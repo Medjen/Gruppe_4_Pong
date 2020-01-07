@@ -1,7 +1,5 @@
 package de.hft.ip1.pong;
 
-import static de.hft.ip1.pong.Application.BASEFOLDER;
-
 import java.io.File;
 import java.io.IOException;
 

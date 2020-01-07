@@ -1,9 +1,7 @@
 package de.hft.ip1.pong;
 
 import java.awt.*;
-
 import javax.swing.JLabel;
-import javax.swing.JPanel;
 
 import static de.hft.ip1.pong.Application.ROOTFRAME;
 import static de.hft.ip1.pong.InGame.PONG;
