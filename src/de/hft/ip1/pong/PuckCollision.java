@@ -6,7 +6,6 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 import javax.swing.JOptionPane;
-import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 
@@ -37,7 +36,7 @@ public class PuckCollision {
 					PONG.addPlayerPoints(1);
 					if (PONG.getPlayerPoints() >= PONG.getOpponentPoints() + 2) {
 						PONG.addPoints(2000);
-						Aftergame();
+						Aftergamewon();
 					}
 					PONG.setPuckSpeed(1.0);
 
@@ -106,6 +105,34 @@ public class PuckCollision {
 
 		ROOTFRAME.getContentPane().removeAll();
 		new MainMenu();
+	}
+	
+		public void Aftergamewon() {
+
+			InGame.Stoppen();
+			String name = JOptionPane.showInputDialog(ROOTFRAME,"Sie haben Gewonnent!\n" +"Du hast " +PONG.getPoints() +" Punkte erreicht. \n\nName:", "Highscore",
+					JOptionPane.INFORMATION_MESSAGE);
+
+			if (name != null) {
+				if (name.length() == 0) {
+					JOptionPane.showMessageDialog(ROOTFRAME, "Bitte geben sie Name ein");
+					Aftergame();
+					return;
+				} else {
+					new AfterGame(name, PONG.getPoints());
+				}
+
+				HighScore highScore = new HighScore();
+				JTable table = new JTable(highScore);
+				table.setDefaultEditor(Object.class, null);
+				table.getTableHeader().setReorderingAllowed(false);
+				JOptionPane.showConfirmDialog(null, new JScrollPane(table), "Highscores", JOptionPane.CLOSED_OPTION,
+						JOptionPane.PLAIN_MESSAGE);
+
+			}
+
+			ROOTFRAME.getContentPane().removeAll();
+			new MainMenu();
 	}
 
 }
